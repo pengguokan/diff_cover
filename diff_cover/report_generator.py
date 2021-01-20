@@ -199,11 +199,12 @@ class BaseReportGenerator:
         # Find violation lines
         violation_lines = self.violation_lines(src_path)
         violations = sorted(self._diff_violations()[src_path].violations)
-
+        measured = sorted(self._diff_violations()[src_path].measured_lines)
         return {
             "percent_covered": self.percent_covered(src_path),
             "violation_lines": violation_lines,
             "violations": violations,
+            "measured_lines": measured,
         }
 
 

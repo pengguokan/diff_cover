@@ -18,6 +18,7 @@
             <tr>
                 <th>Source File</th>
                 <th>Diff Coverage (%)</th>
+                <th>Measured Lines</th>
                 <th>Missing Lines</th>
             </tr>
             {% for src_path, stats in src_stats|dictsort %}
@@ -25,6 +26,7 @@
             <tr>
                 <td>{{ src_path }}</td>
                 <td>{{ stats.percent_covered|round(1) }}%</td>
+                <td>{{ stats.measured_lines|join(',') }}</td>
                 <td>{{ stats.violation_lines|join(',') }}</td>
             </tr>
             {% else %}
